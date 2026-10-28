@@ -1,0 +1,14 @@
+# Beroenden (installeras automatiskt med npm install)
+node_modules/
+
+# Byggfiler (skapas av Vite vid build)
+dist/
+
+# Lokala miljö- och loggfiler
+*.log
+.env
+.env.local
+
+# Operativsystemsskräp
+.DS_Store
+Thumbs.db
