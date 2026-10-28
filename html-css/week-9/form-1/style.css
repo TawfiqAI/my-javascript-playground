@@ -1,0 +1,85 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0 auto;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family:Verdana, Geneva, Tahoma, sans-serif ;
+}
+
+:root{
+    --bg-color: rgb(13, 27, 42);
+    --text-color: rgb(224, 225, 221);
+}
+.radio-group{
+
+    display: flex; align-items: center; gap: 8px;
+}
+.contact-form{
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    min-width: 400px;
+    min-height: 400px;
+    background-color: var(--bg-color);
+    border-radius: 20px;
+    justify-content: space-around;
+
+}
+.contact-form h2{
+    color: var(--text-color);
+}
+.group-label{
+    margin-bottom: 44px;
+}
+.form-group{
+    padding: 2px;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+textarea{
+    resize: none;
+}
+button{
+    cursor: pointer;
+    padding: 10px 20px;
+    width: 100px;
+}
+label{
+    display: block;
+    margin-bottom: 0.5rem;
+}
+input, select,textarea{
+    width: 100%;
+    padding: 8px;
+    border: 2px rgb(119, 141, 169) solid;
+    border-radius: 8px;
+}
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: 2px solid rgb(62, 180, 231);
+}
+/* Gäller alla inputs FÖRUTOM radioknappar */
+input:not([type="radio"]), select, textarea {
+    width: 100%;
+}
+input[type="radio"] {
+    width: auto;
+    display: inline-block;
+}
+.cont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+button{
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+    border: 2px rgb(119, 141, 169) solid;
+}
