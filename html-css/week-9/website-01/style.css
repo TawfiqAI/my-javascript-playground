@@ -1,0 +1,390 @@
+/* ==========================================================================
+   1. VARIABLER & FÄRGTEMA
+   ========================================================================== */
+:root {
+  /* Huvudfärger (Tech & AI-tema i RGB) */
+  --color-primary: rgb(14, 165, 233);        /* Klarblå/Cyan för knappar och fokus */
+  --color-primary-hover: rgb(2, 132, 199);   /* Djupare blå vid hover */
+  --color-accent: rgb(253, 253, 253);        /* Ljusgrå för navigeringsfältet */
+  --color-accent-hover: rgb(158, 198, 236);  /* Mjukt grå hover i menyn */
+  --color-bg: rgb(229, 227, 227);
+  /* Text & Bakgrunder */
+  --color-text-dark: rgb(15, 23, 42);        /* Mörk skifferblå för text */
+  --color-text-light: rgb(255, 255, 255);    /* Vit text */
+  --color-border: rgb(226, 232, 240);        /* Diskret grå kantlinje */
+
+  /* Typografi & Mått */
+  --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --max-width-content: 1400px;
+}
+
+/* ==========================================================================
+   2. RESET & BASINSTÄLLNINGAR
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: var(--color-bg);
+}
+
+html {
+  font-family: var(--font-main);
+  scroll-behavior: smooth;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ==========================================================================
+   3. GLOBAL NAVIGERING (.nav-bar)
+   ========================================================================== */
+.nav-bar {
+  background-color: var(--color-accent);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 75px;
+  padding: 20px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+  
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1600px;
+  margin-top: 10px;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.3rem;
+  margin-right: auto;
+  margin-left: 10px;
+  font-family: monospace;
+  transition: font-size 0.2s ease-in;
+}
+
+.logo:hover {
+  font-size: 1.5rem;
+}
+
+.logo a {
+  color: var(--color-text-dark);
+  text-decoration: none;
+}
+
+.links-container {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.links-container a {
+  font-size: 20px;
+  color: var(--color-text-dark);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 120px;
+  height: 35px;
+  font-weight: 600;
+  border-radius: 2px;
+  transition: background-color 0.2s ease;
+}
+
+.links-container a:hover {
+  background-color: var(--color-accent-hover);
+}
+
+/* Accent-knapp i menyn */
+li .learn-btn {
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+}
+
+li .learn-btn:hover {
+  background-color: var(--color-accent-hover);
+  color: var(--color-primary);
+}
+
+/* Hamburger-knapp (dold på dator) */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 1001;
+}
+
+.hamburger .bar {
+  width: 25px;
+  height: 3px;
+  background-color: var(--color-text-dark);
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+/* ==========================================================================
+   4. HERO-SEKTION (Header)
+   ========================================================================== */
+header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  
+  width: 100%;
+  max-width: var(--max-width-content);
+  
+  margin: 0 auto;
+  padding-top: 100px;
+  padding-inline: 2rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+header .left {
+  flex: 1;
+}
+
+header h1 {
+  font-size: clamp(2.2rem, 5vw, 4.5rem);
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin: 16px 0;
+  background: linear-gradient(90deg, #312972 7%, #1a1423 60%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+header p {
+  font-size: 1.5rem;
+  line-height: 1.6;
+}
+
+header .right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.right img {
+  max-height: 500px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Knappar i hero-sektionen */
+.buttons {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.buttons .btn {
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  background-color: var(--color-primary-hover);
+  padding: 10px 20px;
+  color: var(--color-text-light);
+  min-width: 160px;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.buttons .btn:hover {
+  background-color: var(--color-primary);
+}
+
+.buttons .outlined {
+  background-color: transparent;
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+}
+
+.buttons .outlined:hover {
+  background-color: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+  color: var(--color-text-light);
+}
+
+/* Dekorativ bakgrundseffekt */
+header .bg-color {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background-color: #312972;
+  right: 10%;
+  top: 26%;
+  z-index: -1;
+  border-radius: 50%;
+  filter: blur(115px);
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   5. RESPONSIVITET (Media Queries)
+   ========================================================================== */
+@media (max-width: 1100px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 80px;
+  }
+
+  .buttons {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .nav-bar {
+    width: 95%;
+  }
+
+  header .bg-color {
+    right: 50%;
+    top: 400px;
+    transform: translateX(50%);
+    width: 350px;
+    height: 350px;
+  }
+}
+
+/* ==========================================================================
+   6. GLOBAL NAVIGERING Services
+   ========================================================================== */
+
+.services-section{
+  margin-top: 100px;
+}  
+.services-section h2{
+  text-align: center;
+  font-size: 40px;
+  word-spacing: 1.2rem;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  background: linear-gradient(90deg, #312972 22%, #1a1423 60%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+}  
+.services-container{
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  padding: 20px;
+  
+}
+.service-card{
+  border-top: 5px var(--color-primary-hover) solid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 300px;
+  max-width: 500px;
+  width: 30%;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+
+}
+.service-card img{
+  height: auto;
+  width: 40%;
+  margin-bottom: 16px ;
+}
+
+.service-card h3{
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  background: linear-gradient(90deg, #312972 7%, #1a1423 60%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}.service-card p{
+  font-size: 1.2rem;
+}
+
+   /* ==========================================================================
+   6
+   ========================================================================== */
+@media (max-width: 800px) {
+  .nav-bar {
+    width: 95%;
+  }
+
+  /* Visa hamburger-knappen på mobil */
+  .hamburger {
+    display: flex;
+  }
+
+  /* Gör om menyn till en mobil-dropdown */
+  .links-container {
+    position: fixed;
+    top: 85px;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-accent);
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0;
+    gap: 1.5rem;
+    box-shadow: 0 10px 15px rgba(15, 23, 42, 0.1);
+    border-radius: 6px;
+    
+    /* Dölj menyn som standard på mobil */
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+  }
+
+  .services-container{
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  }
+  .service-card{
+    width: 60%;
+  }
+
+  /* Visar menyn när JavaScript lägger till .active */
+  .links-container.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .links-container a {
+    min-width: 150px;
+    padding: 10px;
+  }
+
+  /* Förvandla de tre strecken till ett kryss (X) */
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
+
