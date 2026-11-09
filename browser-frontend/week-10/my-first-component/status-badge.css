@@ -1,0 +1,13 @@
+:host{
+    display: inline-block;
+}
+:host([hidden]) {
+    display: none;
+}
+
+.badge{
+    padding: 4px 8px;
+    border-radius: 4px;
+    background: #eee;
+    font-family: sans-serif;
+}

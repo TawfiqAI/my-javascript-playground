@@ -1,0 +1,33 @@
+*,*::before, *::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.navbar{
+    background-color: aqua;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 50px;
+}
+.logo{
+    margin-right: auto;
+}
+.nav-links{
+    display: flex;
+    gap: 16px;
+    margin-right: 10px;
+}
+ul, li,a{
+    list-style: none;
+    text-decoration: none;
+    height: 100%;
+}
+a{
+    height: 100%;
+    display: flex;
+}
+
+a:hover{
+    background-color: antiquewhite;
+}
