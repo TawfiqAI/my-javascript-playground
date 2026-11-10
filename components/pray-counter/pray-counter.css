@@ -1,0 +1,67 @@
+:host { display: block; }
+:host([hidden]) { display: none; }
+[hidden] {
+  display: none !important;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.wrapper {
+  max-width: 300px;
+  min-height: 200px;
+  background-color: rgb(227, 227, 227);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(112, 178, 239);
+  border-radius: 15px;
+  padding: 8px;
+}
+.pray-text {
+  margin-bottom: 10px;
+}
+.btn-wrapper {
+  display: flex;
+  width: 100%;
+  gap: 1.4rem;
+  justify-content: center;
+}
+.counter{
+  margin: 6px;
+}
+button {
+  padding: 1rem;
+  width: 5rem;
+  cursor: pointer;
+  border-radius: 16px;
+  border: 2px dashed rgb(82, 218, 245);
+}
+button:hover{
+    background-color: rgb(188, 247, 247);
+}
+.grean-flash{
+  color: rgb(122, 200, 117);
+}
+.red-flash{
+  color: rgb(255, 0, 0);
+}
+.togle-btn{
+  display: none;
+}
+
+@media (max-width: 315px) {
+  .btn-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  button{
+    width: 70%;
+    min-width: 60px;
+  }
+}
